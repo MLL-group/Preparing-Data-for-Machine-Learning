@@ -5,9 +5,9 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.neighbors import LocalOutlierFactor
 
 
-def evaluate_linear_regression(X, y):
+def evaluate_linear_regression(_X, _y):
     # split into train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
+    X_train, X_test, y_train, y_test = train_test_split(_X, _y, test_size=0.33, random_state=1)
     print(X_train.shape, y_train.shape)
     # fit the model
     model = LinearRegression()
@@ -18,9 +18,10 @@ def evaluate_linear_regression(X, y):
     mae = mean_absolute_error(y_test, yhat)
     print('MAE: %.3f' % mae)
 
-def automatic_outlier_detection(X, y):
+
+def automatic_outlier_detection(_X, _y):
     # split into train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=1)
+    X_train, X_test, y_train, y_test = train_test_split(_X, _y, test_size=0.33, random_state=1)
     print(X_train.shape, y_train.shape)
     # identify outliers in the training dataset
     lof = LocalOutlierFactor()

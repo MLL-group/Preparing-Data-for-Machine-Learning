@@ -1,4 +1,4 @@
-from numpy import isnan, mean, std, nan
+from numpy import isnan, mean, std
 from pandas import read_csv
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
@@ -18,7 +18,7 @@ def summarize_missing_values_for_each_column(dataframe):
         print(f'> {i}, Missing: {n_miss} {perc}')
 
 
-def simpleimputer_data_transform(dataframe):
+def simple_imputer_data_transform(dataframe):
     # split into input and output elements
     data = dataframe.values
     ix = [i for i in range(data.shape[1]) if i != 23]
@@ -60,8 +60,7 @@ def comparison_different_simpleimputer_strategy_data_transform(dataframe):
 
 if __name__ == "__main__":
     # load dataset
-    dataframe = read_csv('dataset/horse-colic.csv', header=None, na_values='?')
-    summarize_missing_values_for_each_column(dataframe)
-    simpleimputer_data_transform(dataframe)
-    comparison_different_simpleimputer_strategy_data_transform(dataframe)
-
+    df = read_csv('dataset/horse-colic.csv', header=None, na_values='?')
+    summarize_missing_values_for_each_column(df)
+    simple_imputer_data_transform(df)
+    comparison_different_simpleimputer_strategy_data_transform(df)

@@ -14,38 +14,38 @@ def load_dataset(filename):
     # retrieve numpy array
     dataset = data.values
     # split into input (X) and output (y) variables
-    X = dataset[:, :-1]
-    y = dataset[:, -1]
+    _X = dataset[:, :-1]
+    _y = dataset[:, -1]
     # format all fields as string
-    X = X.astype(str)
-    return X, y
+    _X = _X.astype(str)
+    return _X, _y
 
 
 # prepare input data
-def prepare_inputs(X_train, X_test):
+def prepare_inputs(_X_train, _X_test):
     oe = OrdinalEncoder()
-    oe.fit(X_train)
-    X_train_enc = oe.transform(X_train)
-    X_test_enc = oe.transform(X_test)
-    return X_train_enc, X_test_enc
+    oe.fit(_X_train)
+    _X_train_enc = oe.transform(_X_train)
+    _X_test_enc = oe.transform(_X_test)
+    return _X_train_enc, _X_test_enc
 
 
 # prepare target
-def prepare_targets(y_train, y_test):
+def prepare_targets(_y_train, _y_test):
     le = LabelEncoder()
-    le.fit(y_train)
-    y_train_enc = le.transform(y_train)
-    y_test_enc = le.transform(y_test)
-    return y_train_enc, y_test_enc
+    le.fit(_y_train)
+    _y_train_enc = le.transform(_y_train)
+    _y_test_enc = le.transform(_y_test)
+    return _y_train_enc, _y_test_enc
 
 
 # feature selection
-def select_features(X_train, y_train, X_test):
-    fs = SelectKBest(score_func=mutual_info_classif, k='all')
-    fs.fit(X_train, y_train)
-    X_train_fs = fs.transform(X_train)
-    X_test_fs = fs.transform(X_test)
-    return X_train_fs, X_test_fs, fs
+def select_features(_X_train, _y_train, _X_test):
+    _fs = SelectKBest(score_func=mutual_info_classif, k='all')
+    _fs.fit(_X_train, _y_train)
+    _X_train_fs = _fs.transform(_X_train)
+    _X_test_fs = _fs.transform(_X_test)
+    return _X_train_fs, _X_test_fs, _fs
 
 
 if __name__ == "__main__":

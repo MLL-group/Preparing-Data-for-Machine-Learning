@@ -1,13 +1,13 @@
 from pandas import read_csv
 
 
-def identify_rows_that_contain_duplicate_data(df):
+def identify_rows_that_contain_duplicate_data(data):
     # calculate duplicates
-    dups = df.duplicated()
+    duplicates = data.duplicated()
     # report if there are any duplicates
-    print(dups.any())
+    print(duplicates.any())
     # list all duplicate rows
-    print(df[dups])
+    print(data[duplicates])
 
 
 if __name__ == "__main__":

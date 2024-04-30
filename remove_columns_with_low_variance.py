@@ -4,8 +4,8 @@ from matplotlib import pyplot
 from numpy import arange
 
 
-def remove_columns_with_low_variance(df):
-    data = df.values
+def remove_columns_with_low_variance(dataframe):
+    data = dataframe.values
     X = data[:, :-1]
     y = data[:, -1]
     print(X.shape, y.shape)

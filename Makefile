@@ -70,7 +70,7 @@ exercise-21:
 exercise-22:
 	@poetry run python knn_normalization.py
 
-exercise-24:
+exercise-23:
 	@poetry run python pca_dimensionality_reduction.py
 
 

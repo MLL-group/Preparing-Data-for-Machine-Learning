@@ -1,12 +1,12 @@
 from pandas import read_csv
 
 
-def delete_columns_that_contain_a_single_value(df):
+def delete_columns_that_contain_a_single_value(data):
     # record columns to delete
     to_del = [i for i, v in enumerate(counts) if v == 1]
     print(to_del)
     # drop useless columns
-    df.drop(to_del, axis=1, inplace=True)
+    data.drop(to_del, axis=1, inplace=True)
     print(df.shape)
 
 

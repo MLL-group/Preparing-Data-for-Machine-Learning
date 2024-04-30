@@ -1,12 +1,12 @@
 from pandas import read_csv
 
 
-def delete_columns_with_less_than_1_percent_unique_values(df):
+def delete_columns_with_less_than_1_percent_unique_values(dataframe):
     # record columns to delete
-    to_del = [i for i, v in enumerate(counts) if (float(v) / df.shape[0] * 100) < 1]
+    to_del = [i for i, v in enumerate(counts) if (float(v) / dataframe.shape[0] * 100) < 1]
     print(to_del)
     # drop useless columns
-    df.drop(to_del, axis=1, inplace=True)
+    dataframe.drop(to_del, axis=1, inplace=True)
     print(df.shape)
 
 

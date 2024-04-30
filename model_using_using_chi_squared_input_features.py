@@ -40,6 +40,7 @@ def prepare_targets(y_train, y_test):
     y_test_enc = le.transform(y_test)
     return y_train_enc, y_test_enc
 
+
 # feature selection
 def select_features(X_train, y_train, X_test):
     fs = SelectKBest(score_func=chi2, k=4)
@@ -47,6 +48,7 @@ def select_features(X_train, y_train, X_test):
     X_train_fs = fs.transform(X_train)
     X_test_fs = fs.transform(X_test)
     return X_train_fs, X_test_fs
+
 
 if __name__ == "__main__":
     # load the dataset

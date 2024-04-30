@@ -3,8 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error
 
-
-
 if __name__ == "__main__":
     # load the dataset
     X, y = make_regression(n_samples=1000, n_features=100, n_informative=10, noise=0.1,

@@ -1,12 +1,8 @@
-from numpy import mean, nan
-from numpy import std
+from numpy import nan
 from pandas import read_csv
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import KNNImputer
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.pipeline import Pipeline
-from matplotlib import pyplot
 
 if __name__ == "__main__":
     # load dataset

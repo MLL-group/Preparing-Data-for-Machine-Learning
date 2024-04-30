@@ -5,9 +5,9 @@ from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 
 
-def evaluate_model(dataset):
+def evaluate_model(ds):
     # split dataset into inputs and outputs
-    values = dataset.values
+    values = ds.values
     X = values[:, 0:8]
     y = values[:, 8]
     # define the model

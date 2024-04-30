@@ -1,10 +1,10 @@
 from pandas import read_csv
 
 
-def delete_rows_that_contain_duplicate_data(df):
+def delete_rows_that_contain_duplicate_data(data):
     # delete duplicate rows
-    df.drop_duplicates(inplace=True)
-    print(df.shape)
+    data.drop_duplicates(inplace=True)
+    print(data.shape)
 
 
 if __name__ == "__main__":
